@@ -8,10 +8,9 @@ class Api {
     final uri = Uri.parse('https://api.remove.bg/v1.0/removebg');
 
     try {
-      var request =
-          http.MultipartRequest('POST', uri)
-            ..headers['X-Api-Key'] = apiKey
-            ..files.add(await http.MultipartFile.fromPath('image_file', image));
+      var request = http.MultipartRequest('POST', uri)
+        ..headers['X-Api-Key'] = apiKey
+        ..files.add(await http.MultipartFile.fromPath('image_file', image));
 
       var response = await request.send();
 
